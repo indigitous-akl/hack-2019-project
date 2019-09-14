@@ -4,11 +4,10 @@ mgmt = graph.openManagement()
 /*
 Property Key types
 */
-
 name = mgmt.makePropertyKey("name").dataType(String.class).make()
-id = mgmt.makePropertyKey("id").dataType(String.class).make()
+uid = mgmt.makePropertyKey("uid").dataType(String.class).make()
 email = mgmt.makePropertyKey("email").dataType(String.class).make()
-username = mgmt.makePropertyKey("username").dataType(String.class).make()
+login = mgmt.makePropertyKey("login").dataType(String.class).make()
 
 /*
 Edge labels
