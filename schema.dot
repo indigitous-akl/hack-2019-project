@@ -37,6 +37,11 @@ graph G {
         repository_bramford_packerdebian9_properties [shape=record label="{name: packer-debian9}"]
     }
 
+    subgraph cluster_4001 {
+        language_shell [label="language" style=filled color=lightblue]
+        language_shell [shape=record label="{name: Shell}"]
+    }
+
     {
         edge [
             fontsize=14
@@ -46,5 +51,6 @@ graph G {
         indigitous_user_bramford_horton -- github_user_bramford [label="is" arrowhead=empty]
         indigitous_user_winston_poh -- github_user_winstonpoh [label="is" arrowhead=empty]
         github_user_bramford -- repository_bramford_packerdebian9 [label="owns" arrowhead=empty]
+        repository_bramford_packerdebian9 -- language_shell [label="primary_language" arrowhead=empty]
     }
 }

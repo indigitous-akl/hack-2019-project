@@ -7,9 +7,15 @@ query ($query: String!) {
         repositories(first:100) {
           nodes {
             name
+            primaryLanguage {
+              ... on Language
+              {
+                name
+              }
+            }
           }
           pageInfo {
-             endCursor
+            endCursor
             hasNextPage
           }
         }
@@ -27,6 +33,12 @@ query ($query: String!) {
         repositoriesContributedTo(first:100) {
           nodes {
             name
+            primaryLanguage {
+              ... on Language
+              {
+                name
+              }
+            }
           }
           pageInfo {
              endCursor
@@ -50,7 +62,7 @@ query ($owner_name: String!, $repo_name: String!){
         email
         name
       }
-    
+
       pageInfo {
         endCursor
         hasNextPage
@@ -71,7 +83,7 @@ query ($owner_name: String!, $repo_name: String!){
         email
         name
       }
-    
+
       pageInfo {
         endCursor
         hasNextPage
