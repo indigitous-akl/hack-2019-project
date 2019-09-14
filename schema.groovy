@@ -13,6 +13,7 @@ login = mgmt.makePropertyKey("login").dataType(String.class).make()
 Edge labels
 */
 mgmt.makeEdgeLabel("is").multiplicity(Multiplicity.SIMPLE).make()
+mgmt.makeEdgeLabel("owns").multiplicity(Multiplicity.ONE2MANY).make()
 
 /*
 Vertex labels

@@ -13,23 +13,28 @@ graph G {
     ]
 
     subgraph cluster_1000 {
-        indigitous_user_bramford_horton [label="indigitous_user\n2" style=filled color=lightblue]
+        indigitous_user_bramford_horton [label="indigitous_user" style=filled color=lightblue]
         indigitous_user_bramford_horton_properties [shape=record label="{id: 3012|name: Bramford Horton|email: bram.horton@gmail.com}"]
     }
 
     subgraph cluster_1001 {
-        indigitous_user_winston_poh [label="indigitous_user\n2" style=filled color=lightblue]
+        indigitous_user_winston_poh [label="indigitous_user" style=filled color=lightblue]
         indigitous_user_winston_poh_properties [shape=record label="{id: 5015|name: Winston Poh|email: winst940116@hotmail.my}"]
     }
 
     subgraph cluster_2000 {
-        github_user_bramford_horton [label="github_user\n2" style=filled color=lightblue]
-        github_user_bramford_horton_properties [shape=record label="{username: bramford|name: Bramford Horton|email: bram.horton@gmail.com}"]
+        github_user_bramford [label="github_user" style=filled color=lightblue]
+        github_user_bramford_properties [shape=record label="{username: bramford|name: Bramford Horton|email: bram.horton@gmail.com}"]
     }
 
     subgraph cluster_2001 {
-        github_user_winston_poh [label="github_user\n2" style=filled color=lightblue]
-        github_user_winston_poh_properties [shape=record label="{username: winstonpoh|name: Winston Poh|email: winst940116@hotmail.my}"]
+        github_user_winstonpoh [label="github_user" style=filled color=lightblue]
+        github_user_winstonpoh_properties [shape=record label="{username: winstonpoh|name: Winston Poh|email: winst940116@hotmail.my}"]
+    }
+
+    subgraph cluster_3001 {
+        repository_bramford_packerdebian9 [label="repository" style=filled color=lightblue]
+        repository_bramford_packerdebian9_properties [shape=record label="{name: packer-debian9}"]
     }
 
     {
@@ -38,7 +43,8 @@ graph G {
             dir=forward
         ]
 
-        indigitous_user_bramford_horton -- github_user_bramford_horton [label="is" arrowhead=empty]
-        indigitous_user_winston_poh -- github_user_winston_poh [label="is" arrowhead=empty]
+        indigitous_user_bramford_horton -- github_user_bramford [label="is" arrowhead=empty]
+        indigitous_user_winston_poh -- github_user_winstonpoh [label="is" arrowhead=empty]
+        github_user_bramford -- repository_bramford_packerdebian9 [label="owns" arrowhead=empty]
     }
 }

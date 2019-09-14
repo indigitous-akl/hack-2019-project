@@ -1,0 +1,39 @@
+# User repositories owned
+{
+  search(type: USER, query: "user:bramford", first: 1) {
+    nodes {
+      __typename
+      ... on User {
+        repositories(first:100) {
+          nodes {
+            name
+          }
+          pageInfo {
+             endCursor
+            hasNextPage
+          }
+        }
+      }
+    }
+  }
+}
+
+# User repositories contributed to
+{
+  search(type: USER, query: "user:bramford", first: 1) {
+    nodes {
+      __typename
+      ... on User {
+        repositoriesContributedTo(first:100) {
+          nodes {
+            name
+          }
+          pageInfo {
+             endCursor
+            hasNextPage
+          }
+        }
+      }
+    }
+  }
+}
