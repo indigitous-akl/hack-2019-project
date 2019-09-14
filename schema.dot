@@ -34,12 +34,12 @@ graph G {
 
     subgraph cluster_3001 {
         repository_bramford_JanusGraph [label="repository" style=filled color=lightblue]
-        repository_bramford_JanusGraph_properties [shape=record label="{name: janusgraph-docker}"]
+        repository_bramford_JanusGraph_properties [shape=record label="{nameWithOwner: bramford/janusgraph-docker}"]
     }
 
     subgraph cluster_3002 {
         repository_JanusGraph_JanusGraph [label="repository" style=filled color=lightblue]
-        repository_JanusGraph_JanusGraph_properties [shape=record label="{name: janusgraph-docker}"]
+        repository_JanusGraph_JanusGraph_properties [shape=record label="{nameWithOwner: janusgraph/janusgraph-docker}"]
     }
 
     subgraph cluster_4001 {
@@ -59,7 +59,5 @@ graph G {
         repository_bramford_JanusGraph -- language_shell [label="primary_language" arrowhead=empty]
         repository_bramford_JanusGraph -- repository_JanusGraph_JanusGraph [label="forks" arrowhead=empty]
         repository_JanusGraph_JanusGraph -- language_shell [label="primary_language" arrowhead=empty]
-        github_user_bramford -- repository_bramford_packerdebian9 [label="owns" arrowhead=empty]
-        repository_bramford_packerdebian9 -- language_shell [label="primary_language" arrowhead=empty]
     }
 }

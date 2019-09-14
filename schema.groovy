@@ -5,6 +5,7 @@ mgmt = graph.openManagement()
 Property Key types
 */
 name = mgmt.makePropertyKey("name").dataType(String.class).make()
+name = mgmt.makePropertyKey("nameWithOwner").dataType(String.class).make()
 uid = mgmt.makePropertyKey("uid").dataType(String.class).make()
 email = mgmt.makePropertyKey("email").dataType(String.class).make()
 login = mgmt.makePropertyKey("login").dataType(String.class).make()
