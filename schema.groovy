@@ -24,6 +24,7 @@ mgmt.makeEdgeLabel("is").multiplicity(Multiplicity.SIMPLE).make()
 mgmt.makeEdgeLabel("owns").multiplicity(Multiplicity.ONE2MANY).make()
 mgmt.makeEdgeLabel("primary_language").multiplicity(Multiplicity.MANY2ONE).make()
 mgmt.makeEdgeLabel("forks").multiplicity(Multiplicity.MANY2ONE).make()
+mgmt.makeEdgeLabel("stars").multiplicity(Multiplicity.MANY2MANY).make()
 
 // Commit the schema
 mgmt.commit()
