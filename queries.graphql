@@ -1,6 +1,6 @@
 # User repositories owned
-{
-  search(type: USER, query: "user:bramford", first: 1) {
+query ($query: String!) {
+  search(type: USER, query: $query, first: 1) {
     nodes {
       __typename
       ... on User {
@@ -19,8 +19,8 @@
 }
 
 # User repositories contributed to
-{
-  search(type: USER, query: "user:bramford", first: 1) {
+query ($query: String!) {
+  search(type: USER, query: $query, first: 1) {
     nodes {
       __typename
       ... on User {
@@ -37,3 +37,46 @@
     }
   }
 }
+
+# query for collaborators (assignable users)
+query ($owner_name: String!, $repo_name: String!){
+  repository(owner: $owner_name, name: $repo_name) {
+    id
+    name
+    assignableUsers(first:100) {
+      totalCount
+      nodes {
+        login
+        email
+        name
+      }
+    
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+  	}
+  }
+}
+
+# query for collaborators(mentionable users)
+query ($owner_name: String!, $repo_name: String!){
+  repository(owner: $owner_name, name: $repo_name) {
+    id
+    name
+    mentionableUsers(first:100) {
+      totalCount
+      nodes {
+        login
+        email
+        name
+      }
+    
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+  	}
+  }
+}
+
